@@ -38,7 +38,7 @@ Simulation of V2X communication system using DSRC framework with WLAN and Analys
 
 # Simulation
 
-<a href="https://www.youtube.com/watch?v=ydfMuaADFxc" target="_blank"><img src="https://www.researchgate.net/profile/Xuyu_Wang2/publication/321088744/figure/download/fig1/AS:567743647027200@1512372041057/Four-types-of-V2X-application-support-in-3GPP-ie-V2V-V2P-V2N-and-V2I.png" alt="V2X" width="240" height="180" border="10" /></a>
+<a href="https://www.youtube.com/watch?v=ydfMuaADFxc" target="_blank"></a>
 
 
 # Reference
