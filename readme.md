@@ -38,7 +38,7 @@ Simulation of V2X communication system using DSRC framework with WLAN and Analys
 
 # Simulation
 
-<a href="https://www.youtube.com/watch?v=ydfMuaADFxc" target="_blank"> <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fgiphy.com%2Fexplore%2Ftap-me&psig=AOvVaw2s8lpt62YVNg5L4EVglcf5&ust=1604381232746000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCLiRsYmQ4-wCFQAAAAAdAAAAABAW"alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /> </a>
+<a href="https://www.youtube.com/watch?v=ydfMuaADFxc" target="_blank"> <img src="http://babich.biz/content/images/2016/03/1-CcA0g8SdxrVMawVw5ypWZQ.gif" alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /> </a>
 
 
 
