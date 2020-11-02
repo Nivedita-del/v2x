@@ -1,0 +1,89 @@
+file 4022 1604256793                                            
+version 2
+run WithBeaconing-0-20201102-00:22:34-13497
+attr configname WithBeaconing
+attr datetime 20201102-00:22:34
+attr experiment WithBeaconing
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network RSUExampleScenario
+attr processid 13497
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param *.rsu[*].appl.sendBeacons true
+param *.node[*].appl.sendBeacons true
+param *.playgroundSizeX 2500m
+param *.playgroundSizeY 2500m
+param *.playgroundSizeZ 50m
+param *.annotations.draw true
+param *.obstacles.obstacles "xmldoc(\"config.xml\", \"//AnalogueModel[@type='SimpleObstacleShadowing']/obstacles\")"
+param *.manager.updateInterval 1s
+param *.manager.host "\"localhost\""
+param *.manager.port 9999
+param *.manager.autoShutdown true
+param *.manager.launchConfig "xmldoc(\"erlangen.launchd.xml\")"
+param *.rsu[0].mobility.x 2000
+param *.rsu[0].mobility.y 2000
+param *.rsu[0].mobility.z 3
+param *.rsu[*].applType "\"TraCIDemoRSU11p\""
+param *.rsu[*].appl.headerLength "80 bit"
+param *.rsu[*].appl.sendBeacons false
+param *.rsu[*].appl.dataOnSch false
+param *.rsu[*].appl.beaconInterval 1s
+param *.rsu[*].appl.beaconUserPriority 7
+param *.rsu[*].appl.dataUserPriority 5
+param *.rsu[*].nic.phy80211p.antennaOffsetZ "0 m"
+param *.connectionManager.sendDirect true
+param *.connectionManager.maxInterfDist 2600m
+param *.connectionManager.drawMaxIntfDist false
+param *.**.nic.mac1609_4.useServiceChannel false
+param *.**.nic.mac1609_4.txPower 20mW
+param *.**.nic.mac1609_4.bitrate 6Mbps
+param *.**.nic.phy80211p.minPowerLevel -110dBm
+param *.**.nic.phy80211p.useNoiseFloor true
+param *.**.nic.phy80211p.noiseFloor -98dBm
+param *.**.nic.phy80211p.decider "xmldoc(\"config.xml\")"
+param *.**.nic.phy80211p.analogueModels "xmldoc(\"config.xml\")"
+param *.**.nic.phy80211p.usePropagationDelay true
+param *.**.nic.phy80211p.antenna "xmldoc(\"antenna.xml\", \"/root/Antenna[@id='monopole']\")"
+param *.node[*].nic.phy80211p.antennaOffsetY "0 m"
+param *.node[*].nic.phy80211p.antennaOffsetZ "1.895 m"
+param *.node[*].applType "\"TraCIDemo11p\""
+param *.node[*].appl.headerLength "80 bit"
+param *.node[*].appl.sendBeacons false
+param *.node[*].appl.dataOnSch false
+param *.node[*].appl.beaconInterval 1s
+param *.node[*].veinsmobility.x 0
+param *.node[*].veinsmobility.y 0
+param *.node[*].veinsmobility.z 0
+param *.node[*].veinsmobility.setHostSpeed false
+param *.node[*0].veinsmobility.accidentCount 1
+param *.node[*0].veinsmobility.accidentStart 73s
+param *.node[*0].veinsmobility.accidentDuration 50s
+
+vector 0 RSUExampleScenario.node[0].veinsmobility posx ETV
+vector 1 RSUExampleScenario.node[0].veinsmobility posy ETV
+vector 2 RSUExampleScenario.node[0].veinsmobility speed ETV
+vector 3 RSUExampleScenario.node[0].veinsmobility acceleration ETV
+vector 4 RSUExampleScenario.node[0].veinsmobility co2emission ETV
+vector 5 RSUExampleScenario.node[1].veinsmobility posx ETV
+vector 6 RSUExampleScenario.node[1].veinsmobility posy ETV
+vector 7 RSUExampleScenario.node[1].veinsmobility speed ETV
+vector 8 RSUExampleScenario.node[1].veinsmobility acceleration ETV
+vector 9 RSUExampleScenario.node[1].veinsmobility co2emission ETV
+0	3200 139 11 218 1 6 6 2388.9936340754 2414.9014220152 14422.443462235 34668290.972925
+1	3339 140 11 218 1 6 6 1578.4416120471 1599.9554281235 9517.7121355403 15098164.04683
+2	3479 117 40 218 2 6 5 3.9572089270348 11.533503466331 38.491814292445 332.24388044307
+3	3596 94 69 218 3 6 4 1.8271086537745 1.9700068054721 7.5762945392961 14.366291885947
+4	3690 94 69 218 3 6 4 3.9690439751639 7.2118621755177 22.261237485125 130.04002728942
+5	3784 71 98 218 4 6 3 2407.2506839979 2414.8859801291 7234.1320864162 17444252.069777
+6	3855 70 98 218 4 6 3 1578.4472822268 1581.463551742 4739.4195139483 7487370.4583881
+7	3925 48 158 218 5 6 2 4.0425376740037 5.9899797741635 10.032517448167 52.221968540627
+8	3973 24 218 218 6 6 1 1.9474421001598 1.9474421001598 1.9474421001598 3.7925307334749
+9	3997 24 218 218 6 6 1 4.2301091069722 4.2301091069722 4.2301091069722 17.893823056889
+

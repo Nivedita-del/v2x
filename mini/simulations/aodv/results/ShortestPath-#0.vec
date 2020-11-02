@@ -1,0 +1,625 @@
+version 2
+run ShortestPath-0-20201102-00:34:53-15133
+attr configname ShortestPath
+attr datetime 20201102-00:34:53
+attr experiment ShortestPath
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network ShortestPath
+attr processid 15133
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param **.wlan[*].radio.transmitter.communicationRange 240m
+param **.sender.numApps 1
+param **.sender.app[0].typename "\"PingApp\""
+param **.sender.app[0].startTime uniform(1s,5s)
+param **.sender.app[0].printPing true
+param **.sender.app[0].destAddr "\"receiver(ipv4)\""
+param **.wlan[*].typename "\"AckingWirelessInterface\""
+param **.wlan[*].bitrate 2Mbps
+param **.wlan[*].mac.headerLength 23B
+param **.wlan[*].radio.typename "\"UnitDiskRadio\""
+param **.wlan[*].radio.transmitter.headerLength 96b
+param **.wlan[*].radio.transmitter.communicationRange 250m
+param **.wlan[*].radio.transmitter.interferenceRange 0m
+param **.wlan[*].radio.transmitter.detectionRange 0m
+param **.wlan[*].radio.receiver.ignoreInterference true
+param *.numHosts 20
+param **.host[*].mobility.typename "\"StationaryMobility\""
+param **.mobility.constraintAreaMinZ 0m
+param **.mobility.constraintAreaMaxZ 0m
+param **.mobility.constraintAreaMinX 0m
+param **.mobility.constraintAreaMinY 0m
+param **.mobility.constraintAreaMaxX 600m
+param **.mobility.constraintAreaMaxY 600m
+param *.host[0].numApps 1
+param *.host[0].app[0].typename "\"PingApp\""
+param *.host[0].app[0].startTime uniform(1s,5s)
+param *.host[0].app[0].printPing true
+param **.wlan[*].bitrate 2Mbps
+param **.hasStatus true
+
+vector 0 ShortestPath.sender.wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 1 ShortestPath.intermediateNodeA.wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 2 ShortestPath.intermediateNodeB.wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 3 ShortestPath.intermediateNodeC.wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 4 ShortestPath.receiver.wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 5 ShortestPath.sender.wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 6 ShortestPath.sender.wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 7 ShortestPath.intermediateNodeA.wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 8 ShortestPath.intermediateNodeA.wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 9 ShortestPath.intermediateNodeB.wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 10 ShortestPath.intermediateNodeB.wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 11 ShortestPath.intermediateNodeC.wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 12 ShortestPath.intermediateNodeC.wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 13 ShortestPath.receiver.wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 14 ShortestPath.receiver.wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 15 ShortestPath.sender.app[0] pingTxSeq:vector ETV
+attr interpolationmode none
+attr title "ping tx seq, vector"
+vector 16 ShortestPath.sender.udp packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, vector(packetBytes)"
+vector 17 ShortestPath.sender.wlan[0].mac rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, vector(packetBytes)"
+vector 18 ShortestPath.sender.wlan[0].mac.queue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 19 ShortestPath.sender.wlan[0].mac.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 20 ShortestPath.sender.wlan[0].mac.queue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 21 ShortestPath.sender.wlan[0].mac.queue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 22 ShortestPath.sender.wlan[0].mac sentDownPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets sent to lower layer, vector(packetBytes)"
+vector 23 ShortestPath.intermediateNodeA.wlan[0].mac rcvdPkFromLl:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, vector(packetBytes)"
+vector 24 ShortestPath.intermediateNodeA.wlan[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 25 ShortestPath.intermediateNodeA.udp packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, vector(packetBytes)"
+vector 26 ShortestPath.intermediateNodeA.udp passedUpPk:vector(count) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed up, vector(count)"
+vector 27 ShortestPath.intermediateNodeB.wlan[0].mac rcvdPkFromLl:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, vector(packetBytes)"
+vector 28 ShortestPath.intermediateNodeB.wlan[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 29 ShortestPath.intermediateNodeB.udp packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, vector(packetBytes)"
+vector 30 ShortestPath.intermediateNodeB.udp passedUpPk:vector(count) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed up, vector(count)"
+vector 31 ShortestPath.intermediateNodeA.udp packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, vector(packetBytes)"
+vector 32 ShortestPath.intermediateNodeA.wlan[0].mac rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, vector(packetBytes)"
+vector 33 ShortestPath.intermediateNodeA.wlan[0].mac.queue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 34 ShortestPath.intermediateNodeA.wlan[0].mac.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 35 ShortestPath.intermediateNodeA.wlan[0].mac.queue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 36 ShortestPath.intermediateNodeA.wlan[0].mac.queue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 37 ShortestPath.intermediateNodeA.wlan[0].mac sentDownPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets sent to lower layer, vector(packetBytes)"
+vector 38 ShortestPath.intermediateNodeC.wlan[0].mac rcvdPkFromLl:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, vector(packetBytes)"
+vector 39 ShortestPath.intermediateNodeC.wlan[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 40 ShortestPath.intermediateNodeC.udp packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, vector(packetBytes)"
+vector 41 ShortestPath.intermediateNodeC.udp passedUpPk:vector(count) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed up, vector(count)"
+vector 42 ShortestPath.sender.wlan[0].mac rcvdPkFromLl:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, vector(packetBytes)"
+vector 43 ShortestPath.sender.wlan[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 44 ShortestPath.sender.udp packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, vector(packetBytes)"
+vector 45 ShortestPath.sender.udp passedUpPk:vector(count) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed up, vector(count)"
+vector 46 ShortestPath.intermediateNodeB.udp packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, vector(packetBytes)"
+vector 47 ShortestPath.intermediateNodeB.wlan[0].mac rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, vector(packetBytes)"
+vector 48 ShortestPath.intermediateNodeB.wlan[0].mac.queue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 49 ShortestPath.intermediateNodeB.wlan[0].mac.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 50 ShortestPath.intermediateNodeB.wlan[0].mac.queue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 51 ShortestPath.intermediateNodeB.wlan[0].mac.queue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 52 ShortestPath.intermediateNodeB.wlan[0].mac sentDownPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets sent to lower layer, vector(packetBytes)"
+vector 53 ShortestPath.receiver.wlan[0].mac rcvdPkFromLl:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, vector(packetBytes)"
+vector 54 ShortestPath.receiver.wlan[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 55 ShortestPath.receiver.udp packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, vector(packetBytes)"
+vector 56 ShortestPath.receiver.udp passedUpPk:vector(count) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed up, vector(count)"
+vector 57 ShortestPath.receiver.udp packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, vector(packetBytes)"
+vector 58 ShortestPath.receiver.ipv4.arp arpRequestSent:vector(packetBytes) ETV
+attr source arpRequestSent
+attr title "ARP request sent, vector(packetBytes)"
+vector 59 ShortestPath.receiver.wlan[0].mac rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, vector(packetBytes)"
+vector 60 ShortestPath.receiver.wlan[0].mac.queue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 61 ShortestPath.receiver.wlan[0].mac.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 62 ShortestPath.receiver.wlan[0].mac.queue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 63 ShortestPath.receiver.wlan[0].mac.queue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 64 ShortestPath.receiver.wlan[0].mac sentDownPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets sent to lower layer, vector(packetBytes)"
+vector 65 ShortestPath.intermediateNodeB.ipv4.arp arpReplySent:vector(packetBytes) ETV
+attr source arpReplySent
+attr title "ARP replies sent, vector(packetBytes)"
+vector 66 ShortestPath.intermediateNodeC.wlan[0].mac packetDropNotAddressedToUs:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, vector(packetBytes)"
+vector 67 ShortestPath.intermediateNodeA.wlan[0].mac packetDropNotAddressedToUs:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, vector(packetBytes)"
+vector 68 ShortestPath.sender.wlan[0].mac packetDropNotAddressedToUs:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, vector(packetBytes)"
+vector 69 ShortestPath.intermediateNodeB.ipv4.arp arpRequestSent:vector(packetBytes) ETV
+attr source arpRequestSent
+attr title "ARP request sent, vector(packetBytes)"
+vector 70 ShortestPath.sender.ipv4.arp arpReplySent:vector(packetBytes) ETV
+attr source arpReplySent
+attr title "ARP replies sent, vector(packetBytes)"
+vector 71 ShortestPath.receiver.wlan[0].mac packetDropNotAddressedToUs:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, vector(packetBytes)"
+0	0	0	0
+0	0	0	0
+0	0	0	4
+1	0	0	0
+1	0	0	0
+1	0	0	4
+2	0	0	0
+2	0	0	0
+2	0	0	4
+3	0	0	0
+3	0	0	0
+3	0	0	4
+4	0	0	0
+4	0	0	0
+4	0	0	4
+5	0	0	1
+5	57	3.202143272258	3
+5	66	3.202491272258	1
+5	84	3.202789017331	3
+5	97	3.203137017331	1
+5	128	3.203390476695	3
+5	135	3.203642476695	1
+5	163	3.206989752911	3
+5	172	3.207241752911	1
+5	196	3.207495209223	3
+5	203	3.207827209223	1
+5	228	3.208304665535	3
+5	236	3.208780665535	1
+6	0	0	1
+6	33	3.198218232299	2
+6	38	3.198566232299	1
+6	176	3.207241752911	2
+6	184	3.207493752911	1
+6	209	3.207827209223	2
+6	216	3.208303209223	1
+7	0	0	1
+7	34	3.198218778866	3
+7	39	3.198566778866	1
+7	83	3.202788918755	3
+7	92	3.203136918755	1
+7	127	3.203390378119	3
+7	133	3.203642378119	1
+7	162	3.206989654335	3
+7	169	3.207241654335	1
+7	180	3.207242299478	3
+7	185	3.207494299478	1
+7	195	3.207495110647	3
+7	201	3.207827110647	1
+7	212	3.20782775579	3
+7	217	3.20830375579	1
+7	227	3.208304566959	3
+7	234	3.208780566959	1
+8	0	0	1
+8	55	3.202142725691	2
+8	60	3.202490725691	1
+9	0	0	1
+9	35	3.198218960455	3
+9	44	3.198566960455	1
+9	58	3.202143355271	3
+9	71	3.202491355271	1
+9	112	3.203137748539	3
+9	119	3.203389748539	1
+9	143	3.203643207903	3
+9	149	3.203975207903	1
+9	181	3.207242481067	3
+9	187	3.207494481067	1
+9	213	3.207827937379	3
+9	219	3.208303937379	1
+9	246	3.208781396743	3
+10	0	0	1
+10	81	3.202788289175	2
+10	86	3.203136289175	1
+10	123	3.203389748539	2
+10	130	3.203641748539	1
+10	160	3.206989024755	2
+10	165	3.207241024755	1
+10	191	3.207494481067	2
+10	198	3.207826481067	1
+10	223	3.208303937379	2
+10	231	3.208779937379	1
+11	0	0	1
+11	56	3.202143221368	3
+11	61	3.202491221368	1
+11	82	3.202788675447	3
+11	87	3.203136675447	1
+11	111	3.203137449155	3
+11	116	3.203389449155	1
+11	125	3.203390134811	3
+11	131	3.203642134811	1
+11	142	3.203642908519	3
+11	147	3.203974908519	1
+11	161	3.206989411027	3
+11	166	3.207241411027	1
+11	193	3.207494867339	3
+11	199	3.207826867339	1
+11	225	3.208304323651	3
+11	232	3.208780323651	1
+11	245	3.208781097359	3
+12	0	0	1
+13	0	0	1
+13	85	3.202789018857	3
+13	102	3.203137018857	1
+13	129	3.203390478221	3
+13	137	3.203642478221	1
+13	164	3.206989754437	3
+13	177	3.207241754437	1
+13	197	3.207495210749	3
+13	210	3.207827210749	1
+13	229	3.208304667061	3
+13	238	3.208780667061	1
+14	0	0	1
+14	110	3.203137018857	2
+14	115	3.203389018857	1
+14	141	3.203642478221	2
+14	146	3.203974478221	1
+14	244	3.208780667061	2
+14	249	3.209256667061	1
+15	26	3.195254009217	0
+16	30	3.198218232299	32
+17	32	3.198218232299	52
+17	175	3.207241752911	28
+17	208	3.207827209223	84
+18	32	3.198218232299	52
+18	175	3.207241752911	28
+18	208	3.207827209223	84
+19	32	3.198218232299	1
+19	32	3.198218232299	0
+19	175	3.207241752911	1
+19	175	3.207241752911	0
+19	208	3.207827209223	1
+19	208	3.207827209223	0
+20	32	3.198218232299	52
+20	175	3.207241752911	28
+20	208	3.207827209223	84
+21	32	3.198218232299	0
+21	175	3.207241752911	0
+21	208	3.207827209223	0
+22	32	3.198218232299	75
+22	175	3.207241752911	51
+22	208	3.207827209223	107
+23	40	3.198566778866	75
+23	93	3.203136918755	75
+23	134	3.203642378119	51
+23	170	3.207241654335	51
+23	186	3.207494299478	51
+23	202	3.207827110647	71
+23	218	3.20830375579	107
+23	235	3.208780566959	107
+24	40	3.198566778866	52
+24	93	3.203136918755	52
+24	170	3.207241654335	28
+25	42	3.198566778866	32
+25	95	3.203136918755	32
+26	42	3.198566778866	1
+26	95	3.203136918755	2
+27	45	3.198566960455	75
+27	72	3.202491355271	75
+27	120	3.203389748539	51
+27	150	3.203975207903	71
+27	188	3.207494481067	51
+27	220	3.208303937379	107
+28	45	3.198566960455	52
+28	72	3.202491355271	52
+28	120	3.203389748539	28
+28	150	3.203975207903	48
+28	188	3.207494481067	28
+28	220	3.208303937379	84
+29	47	3.198566960455	32
+29	74	3.202491355271	32
+29	152	3.203975207903	28
+30	47	3.198566960455	1
+30	74	3.202491355271	2
+30	152	3.203975207903	3
+31	52	3.202142725691	32
+32	54	3.202142725691	52
+33	54	3.202142725691	52
+34	54	3.202142725691	1
+34	54	3.202142725691	0
+35	54	3.202142725691	52
+36	54	3.202142725691	0
+37	54	3.202142725691	75
+38	62	3.202491221368	75
+38	88	3.203136675447	75
+38	117	3.203389449155	51
+38	132	3.203642134811	51
+38	148	3.203974908519	71
+38	167	3.207241411027	51
+38	200	3.207826867339	71
+38	233	3.208780323651	107
+39	62	3.202491221368	52
+39	88	3.203136675447	52
+39	117	3.203389449155	28
+39	167	3.207241411027	28
+40	64	3.202491221368	32
+40	90	3.203136675447	32
+41	64	3.202491221368	1
+41	90	3.203136675447	2
+42	67	3.202491272258	75
+42	98	3.203137017331	75
+42	136	3.203642476695	51
+42	173	3.207241752911	51
+42	204	3.207827209223	71
+42	237	3.208780665535	107
+43	67	3.202491272258	52
+43	98	3.203137017331	52
+43	173	3.207241752911	28
+43	204	3.207827209223	48
+44	69	3.202491272258	32
+44	100	3.203137017331	32
+44	206	3.207827209223	28
+45	69	3.202491272258	1
+45	100	3.203137017331	2
+45	206	3.207827209223	3
+46	78	3.202788289175	32
+46	157	3.206989024755	28
+47	80	3.202788289175	52
+47	122	3.203389748539	28
+47	159	3.206989024755	28
+47	190	3.207494481067	48
+47	222	3.208303937379	84
+48	80	3.202788289175	52
+48	122	3.203389748539	28
+48	159	3.206989024755	28
+48	190	3.207494481067	48
+48	222	3.208303937379	84
+49	80	3.202788289175	1
+49	80	3.202788289175	0
+49	122	3.203389748539	1
+49	122	3.203389748539	0
+49	159	3.206989024755	1
+49	159	3.206989024755	0
+49	190	3.207494481067	1
+49	190	3.207494481067	0
+49	222	3.208303937379	1
+49	222	3.208303937379	0
+50	80	3.202788289175	52
+50	122	3.203389748539	28
+50	159	3.206989024755	28
+50	190	3.207494481067	48
+50	222	3.208303937379	84
+51	80	3.202788289175	0
+51	122	3.203389748539	0
+51	159	3.206989024755	0
+51	190	3.207494481067	0
+51	222	3.208303937379	0
+52	80	3.202788289175	75
+52	122	3.203389748539	51
+52	159	3.206989024755	51
+52	190	3.207494481067	71
+52	222	3.208303937379	107
+53	103	3.203137018857	75
+53	138	3.203642478221	51
+53	178	3.207241754437	51
+53	211	3.207827210749	71
+53	239	3.208780667061	107
+54	103	3.203137018857	52
+54	138	3.203642478221	28
+54	178	3.207241754437	28
+54	239	3.208780667061	84
+55	105	3.203137018857	32
+56	105	3.203137018857	1
+57	107	3.203137018857	28
+58	108	3.203137018857	28
+59	109	3.203137018857	28
+59	140	3.203642478221	48
+59	243	3.208780667061	84
+60	109	3.203137018857	28
+60	140	3.203642478221	48
+60	243	3.208780667061	84
+61	109	3.203137018857	1
+61	109	3.203137018857	0
+61	140	3.203642478221	1
+61	140	3.203642478221	0
+61	243	3.208780667061	1
+61	243	3.208780667061	0
+62	109	3.203137018857	28
+62	140	3.203642478221	48
+62	243	3.208780667061	84
+63	109	3.203137018857	0
+63	140	3.203642478221	0
+63	243	3.208780667061	0
+64	109	3.203137018857	51
+64	140	3.203642478221	71
+64	243	3.208780667061	107
+65	121	3.203389748539	28
+66	132	3.203642134811	51
+66	148	3.203974908519	71
+66	200	3.207826867339	71
+66	233	3.208780323651	107
+67	134	3.203642378119	51
+67	186	3.207494299478	51
+67	202	3.207827110647	71
+67	218	3.20830375579	107
+67	235	3.208780566959	107
+68	136	3.203642476695	51
+68	237	3.208780665535	107
+69	158	3.206989024755	28
+70	174	3.207241752911	28
+71	211	3.207827210749	71
+

@@ -1,0 +1,3 @@
+package mini;
+
+@license(LGPL);
