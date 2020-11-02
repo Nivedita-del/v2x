@@ -45,7 +45,7 @@ Simulation of V2X communication system using DSRC framework with WLAN and Analys
 <a href="https://www.youtube.com/watch?v=ydfMuaADFxc" target="_blank"> <img src="http://babich.biz/content/images/2016/03/1-CcA0g8SdxrVMawVw5ypWZQ.gif" alt="Click me for the simulation" width="500" height="500" border="10" /> </a>
 
 # Ventos Architecture
-![](Architecture_ventos.png)
+![](Untitled Diagram.png)
 VENTOS is an integrated simulator based on two well-known simulators: SUMO and OMNET++.
 
 * **SUMO** (Simulation of Urban Mobility) is an open-source, microscopic, continuous-space, discrete-time C++ road traffic simulator, developed by Institute of Transportation Systems at the German Aerospace Center and adopted as our vehicular traffic simulator. VENTOS is closely coupled withSUMO through TraCI (Traffic Control Interface) and uses the mobility information of cars, bikes and pedestrians to perform realistic simulation. We believe that SUMO is as powerful as a Sumo
