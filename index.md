@@ -113,3 +113,4 @@ VENTOS uses the following libraries:
 * Mohammad Kawser, Syed Safwan Sajjad, Saymon Fahad, Sakib Ahmed “The Perspective of Vehicle-to-Everything (V2X) Communication towards 5G” JSCNS International Journal of computer Science and network security VOL.19 No.4, April 2019.
 
 * Muhammad Ali Imran ; Yusuf Abdulrahman Sambo ; Qammer H. Abbasi “Evolution of Vehicular Communications within the Context of 5G Systems” Publisher:Wiley-IEEE Press ISBN: 9781119515579 , 2019
+
