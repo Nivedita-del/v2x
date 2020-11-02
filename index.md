@@ -1,37 +1,53 @@
-## Welcome to GitHub Pages
+# Problem statement
+Simulation of V2X communication system using DSRC framework with WLAN and Analysis of how vehicles transfer data within less period time.
 
-You can use the [editor on GitHub](https://github.com/Nivedita-del/v2x/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+# Introduction
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+* V2X is a technology not only allows vehicles to “talk” to each other but also gets the information from environment.
+* V2X are an emerging type of networks in which nearby vehicles exchange the data wirelessly in real time.
+* They share information like traffic updates, collision to ensure a safer and more comfortable drive.
 
-### Markdown
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+# Motivation
+* In the current scenario, 5g technology is used for network communication in autonomous cars. Due to this technology there’s a communication lag between two systems. To resolve this problem we are using WLAN (wireless local area network) with DSRC (Dedicated short range communication technology .
+* 5g is an open network .Open networks are usually prone to hacking. To resolve this we use WLAN with security.
+* In the present technology there’s a latency (such as processing delay and delay due to contention) in communication. In this project we’ll use faster WiFi modules and reduce the latency in order to achieve seamless connection.
 
-```markdown
-Syntax highlighted code block
+# Objectives
 
-# Header 1
-## Header 2
-### Header 3
+* Design and simulation of the environment files using OMNETT++.
+* Building of the network communication system using SUMO.
+* Development and implementation of code for behavioral pattern setting.
+* Implementation of V2X communication and analysis of the complete system.
 
-- Bulleted
-- List
+# Methodology
 
-1. Numbered
-2. List
+* Setting Up OMNET++ and linking it with GCC, configuring terminal with G++ path and OMENT++ path.
+* Once the configurations are done, a gui-controller gets initiated where communication between the cars and the environment (i.e traffic signals, collision information etc) is visible.
+* Using OMNETT++, environment (ie .env) files can be created to simulate cars and environment (i.e maps, trees, road).
+* Generating a DSRC network framework which consist of junction (i.e nodes), server can be done using SUMO.
 
-**Bold** and _Italic_ and `Code` text
+# Tools Required
 
-[Link](url) and ![Image](src)
-```
+* C Language
+* Python
+* OMNETT++
+* Sumo
+* Network simulator (used in OMNETT++)
+* Matlab lib (used in OMNETT++)
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+# Simulation
 
-### Jekyll Themes
+<a href="https://www.youtube.com/watch?v=ydfMuaADFxc" target="_blank"> <img src="http://babich.biz/content/images/2016/03/1-CcA0g8SdxrVMawVw5ypWZQ.gif" alt="IMAGE ALT TEXT HERE" width="500" height="500" border="10" /> </a>
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Nivedita-del/v2x/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
 
-### Support or Contact
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+# Reference
+
+* Byun Seungbok , Kang Sangpil , Hong Choulhee , Kim Heeyoung ; Kim yoongi “Design of a V2X Vehicle Antenna” Date of Conference: 23-26 Oct. 2018, ISBN: 978-89-5708-304-8
+
+* Erwin Anggadjaja , Ian Mcloughlin “Point-to-Point OMNeT++ Based Simulation of Reliable Transmission Using Realistic Segmentation and Reassembly with Error Control” Date of Conference: 2-3 Dec. 2010 ISBN: 978-1-4244-8746-2 .
+
+* Mohammad Kawser, Syed Safwan Sajjad, Saymon Fahad, Sakib Ahmed “The Perspective of Vehicle-to-Everything (V2X) Communication towards 5G” JSCNS International Journal of computer Science and network security VOL.19 No.4, April 2019.
+
+* Muhammad Ali Imran ; Yusuf Abdulrahman Sambo ; Qammer H. Abbasi “Evolution of Vehicular Communications within the Context of 5G Systems” Publisher:Wiley-IEEE Press ISBN: 9781119515579 , 2019
