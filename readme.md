@@ -43,9 +43,13 @@ Simulation of V2X communication system using DSRC framework with WLAN and Analys
 # Simulation
 
 ### RSU to RSU communication
+click the image for video simulation
 ![](RSU_2_RSU.png)
 
-<a href="https://www.youtube.com/watch?v=ydfMuaADFxc" target="_blank"> <img src="http://babich.biz/content/images/2016/03/1-CcA0g8SdxrVMawVw5ypWZQ.gif" alt="Click me for the simulation" width="500" height="500" border="10" /> </a>
+### layout v2x
+Click the image for video simulation
+![](layout_v2x.png)
+
 
 # Ventos Architecture
 ![](Architecture_ventos.png)
